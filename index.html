@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Countdown</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Countdown</title>
+  <style>
+html {
+  font-size: 24px;
+}
+  </style>
 </head>
 <body>
-    <h1>Countdown</h1>
+  <div id="end"></div>
+  <div id="cd"></div>
+
+<script>
+const final = '2020-10-01';
+
+const finalDate = new Date(final);
+
+const $end = document.querySelector('#end');
+const $cd = document.querySelector('#cd');
+
+const start = Date.now();
+const end = finalDate.getTime();
+
+const diff = end - start;
+
+const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+$end.innerHTML = final;
+$cd.innerHTML = `${days} days`;
+</script>
 </body>
 </html>
